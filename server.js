@@ -44,7 +44,7 @@ app.use("*", (req, res) => {
 });
 
 //Mongoose connection and run the server
-let URI = process.env.DATABASE || "mongodb://localhost:27017/Todo";
+let URI = process.env.DATABASE || "mongodb://127.0.0.1:27017/Todo";
 port = process.env.PORT || 8080;
 mongoose
     .connect(URI, {

@@ -36,14 +36,6 @@ const DataSchema = mongoose.Schema(
   },
   { versionKey: false }
 );
-/* 
-DataSchema.statics.hashPassword = (Password) => {
-    return bcrypt.hashSync(Password, 10);
-  };
 
-
-DataSchema.methods.validatePassword = function(Password) {
-    return bcrypt.compareSync(Password, this.Password);
-  }; */
 const profileModel = mongoose.model("profiles", DataSchema);
 module.exports = profileModel;

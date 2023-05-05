@@ -1,6 +1,5 @@
 const ProfileModel = require("../models/profileModel");
 var jwt = require("jsonwebtoken");
-const bcrypt = require("bcryptjs");
 
 exports.status = (req, res) => {
   res.status(200).json({
@@ -29,8 +28,8 @@ exports.createProfile = (req, res) => {
 };
 
 exports.UserLogIn = (req, res) => {
-  let UserName = req.body.UserName;
-  let Password = req.body.Password;
+  let {UserName,Password} = req.body;
+  
   ProfileModel.find({ UserName: UserName, Password: Password }, (e, data) => {
     if (e) {
       res.status(404).json({ success: false, message: "can't reach profile" });
